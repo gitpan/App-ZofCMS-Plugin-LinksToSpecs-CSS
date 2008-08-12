@@ -1,0 +1,44 @@
+App-ZofCMS-Plugin-LinksToSpecs-CSS
+
+The module is a plugin for ZofCMS which allows you to easily link to
+CSS properties in CSS2.1 specification. Personally, I use it when writing
+my tutorials, hopefully it will be useful to someone else as well.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc App::ZofCMS::Plugin::LinksToSpecs::CSS
+
+You can also look for information at:
+
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=App-ZofCMS-Plugin-LinksToSpecs-CSS
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/App-ZofCMS-Plugin-LinksToSpecs-CSS
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/App-ZofCMS-Plugin-LinksToSpecs-CSS
+
+    Search CPAN
+        http://search.cpan.org/dist/App-ZofCMS-Plugin-LinksToSpecs-CSS
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Zoffix Znet
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
