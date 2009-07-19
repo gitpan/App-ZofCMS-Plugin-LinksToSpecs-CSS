@@ -3,13 +3,32 @@ package App::ZofCMS::Plugin::LinksToSpecs::CSS;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 
 sub new { bless {}, shift }
 
 sub process {
     my ( $self, $template ) = @_;
+
+    my %pseudo_classes = (
+        ':hover'
+        => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
+        ':visited'
+        => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
+        ':active'
+        => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
+        ':link'
+        => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
+    );
+
+    my %pseudo_elements = (
+        ':before'
+        => q|http://www.w3.org/TR/CSS21/selector.html#before-and-after|,
+        ':after'
+        => q|http://www.w3.org/TR/CSS21/selector.html#before-and-after|,
+    );
+    
     my %props = (
         'background'
         => q|http://w3.org/TR/CSS21/colors.html#propdef-background|,
@@ -308,6 +327,42 @@ sub process {
             $link_start . "$name property</a>",
         );
     }
+
+    keys %pseudo_elements;
+    while ( my ($name, $link ) = each %pseudo_elements ) {
+        my $link_start
+        = qq|<a href="$link" title="CSS Specification: '$name\' pseudo-element">|;
+
+        @{ $template->{t} }{ 
+            "css_$name",
+            "css_${name}_p",
+            "css_${name}_c",
+            "css_${name}_cp",
+        } = (
+            $link_start . "<code>$name</code></a>",
+            $link_start . "<code>$name</code> pseudo-element</a>",
+            $link_start . "$name</a>",
+            $link_start . "$name pseudo-element</a>",
+        );
+    }
+
+    keys %pseudo_classes;
+    while ( my ($name, $link ) = each %pseudo_classes ) {
+        my $link_start
+        = qq|<a href="$link" title="CSS Specification: '$name\' pseudo-class">|;
+
+        @{ $template->{t} }{ 
+            "css_$name",
+            "css_${name}_p",
+            "css_${name}_c",
+            "css_${name}_cp",
+        } = (
+            $link_start . "<code>$name</code></a>",
+            $link_start . "<code>$name</code> pseudo-class</a>",
+            $link_start . "$name</a>",
+            $link_start . "$name pseudo-class</a>",
+        );
+    }
 }
 
 1;
@@ -366,6 +421,10 @@ everything needs to be lowercased:
 
     <tmpl_var name="css_PROP_cp">
     <a href="LINK" title="CSS Specification: 'PROP' property">PROP property</a>
+
+The plugin also has links for C<:after>, C<:hover>, etc. pseudo-classes and pseudo-elements;
+in this case, the rules are the same except in the output word "property" would say
+"pseudo-class" or "pseudo-element".
 
 =head1 SEE ALSO
 

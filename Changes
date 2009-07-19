@@ -1,5 +1,9 @@
 Revision history for App-ZofCMS-Plugin-LinksToSpecs-CSS
 
+0.0102  July 19, 2009
+        Added :hover, :link, :active, :visited
+        as well as :before and :after pseudo-classes/elements
+
 0.0101  August 12, 2008
         First version, released on an unsuspecting world.
 
