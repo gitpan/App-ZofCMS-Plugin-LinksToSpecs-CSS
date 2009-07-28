@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::LinksToSpecs::CSS;
 use warnings;
 use strict;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 
 sub new { bless {}, shift }
@@ -20,6 +20,10 @@ sub process {
         => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
         ':link'
         => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
+        ':lang'
+        => q|http://www.w3.org/TR/CSS21/selector.html#lang|,
+        ':first-child'
+        => q|http://www.w3.org/TR/CSS21/selector.html#first-child|,
     );
 
     my %pseudo_elements = (
@@ -27,6 +31,10 @@ sub process {
         => q|http://www.w3.org/TR/CSS21/selector.html#before-and-after|,
         ':after'
         => q|http://www.w3.org/TR/CSS21/selector.html#before-and-after|,
+        ':first-line'
+        => q|http://www.w3.org/TR/CSS21/selector.html#first-line-pseudo|,
+        ':first-letter'
+        => q|http://www.w3.org/TR/CSS21/selector.html#first-letter|,
     );
     
     my %props = (

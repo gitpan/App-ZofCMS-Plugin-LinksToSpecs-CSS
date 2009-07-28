@@ -1,6 +1,6 @@
 ---
 name: App-ZofCMS-Plugin-LinksToSpecs-CSS
-version: 0.0102
+version: 0.0103
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: easily include links to properties in CSS2.1 specification
@@ -9,11 +9,13 @@ resources:
   license: http://dev.perl.org/licenses/
 build_requires:
   Test::More: 0
+configure_requires:
+  Module::Build: 0.34
 provides:
   App::ZofCMS::Plugin::LinksToSpecs::CSS:
     file: lib/App/ZofCMS/Plugin/LinksToSpecs/CSS.pm
-    version: 0.0102
-generated_by: Module::Build version 0.280801
+    version: 0.0103
+generated_by: Module::Build version 0.34
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4

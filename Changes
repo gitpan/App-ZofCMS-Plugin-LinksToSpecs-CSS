@@ -1,5 +1,9 @@
 Revision history for App-ZofCMS-Plugin-LinksToSpecs-CSS
 
+0.0103  July 28, 2009
+        Added missing :lang and :first-child pseudo-classes
+        and :first-letter and :first-line pseudo-elements
+
 0.0102  July 19, 2009
         Added :hover, :link, :active, :visited
         as well as :before and :after pseudo-classes/elements
