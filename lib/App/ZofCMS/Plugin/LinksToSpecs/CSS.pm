@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::LinksToSpecs::CSS;
 use warnings;
 use strict;
 
-our $VERSION = '0.0103';
+our $VERSION = '0.0104';
 
 
 sub new { bless {}, shift }
@@ -12,6 +12,8 @@ sub process {
     my ( $self, $template ) = @_;
 
     my %pseudo_classes = (
+        ':focus'
+        => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
         ':hover'
         => q|http://www.w3.org/TR/CSS21/selector.html#dynamic-pseudo-classes|,
         ':visited'
